@@ -10,8 +10,6 @@ namespace mRemoteNG.UI.Menu
         private ToolStripSeparator _mMenToolsSep1;
         private ToolStripMenuItem _mMenToolsOptions;
         private ToolStripMenuItem _mMenToolsSshTransfer;
-        private ToolStripMenuItem _mMenToolsExternalApps;
-        private ToolStripMenuItem _mMenToolsPortScan;
         private ToolStripMenuItem _mMenToolsUvncsc;
         private ToolStripMenuItem _mMenToolsComponentsCheck;
 
@@ -27,8 +25,6 @@ namespace mRemoteNG.UI.Menu
         {
             _mMenToolsSshTransfer = new ToolStripMenuItem();
             _mMenToolsUvncsc = new ToolStripMenuItem();
-            _mMenToolsExternalApps = new ToolStripMenuItem();
-            _mMenToolsPortScan = new ToolStripMenuItem();
             _mMenToolsSep1 = new ToolStripSeparator();
             _mMenToolsComponentsCheck = new ToolStripMenuItem();
             _mMenToolsOptions = new ToolStripMenuItem();
@@ -39,8 +35,6 @@ namespace mRemoteNG.UI.Menu
             DropDownItems.AddRange(new ToolStripItem[] {
             _mMenToolsSshTransfer,
             _mMenToolsUvncsc,
-            _mMenToolsExternalApps,
-            _mMenToolsPortScan,
             _mMenToolsSep1,
             _mMenToolsComponentsCheck,
             _mMenToolsOptions});
@@ -64,22 +58,7 @@ namespace mRemoteNG.UI.Menu
             _mMenToolsUvncsc.Text = Language.strUltraVNCSingleClick;
             _mMenToolsUvncsc.Visible = false;
             _mMenToolsUvncsc.Click += mMenToolsUVNCSC_Click;
-            // 
-            // mMenToolsExternalApps
-            // 
-            _mMenToolsExternalApps.Image = Resources.ExtApp;
-            _mMenToolsExternalApps.Name = "mMenToolsExternalApps";
-            _mMenToolsExternalApps.Size = new System.Drawing.Size(184, 22);
-            _mMenToolsExternalApps.Text = Language.strMenuExternalTools;
-            _mMenToolsExternalApps.Click += mMenToolsExternalApps_Click;
-            // 
-            // mMenToolsPortScan
-            // 
-            _mMenToolsPortScan.Image = Resources.PortScan;
-            _mMenToolsPortScan.Name = "mMenToolsPortScan";
-            _mMenToolsPortScan.Size = new System.Drawing.Size(184, 22);
-            _mMenToolsPortScan.Text = Language.strMenuPortScan;
-            _mMenToolsPortScan.Click += mMenToolsPortScan_Click;
+
             // 
             // mMenToolsSep1
             // 
@@ -107,8 +86,6 @@ namespace mRemoteNG.UI.Menu
         {
             Text = Language.strMenuTools;
             _mMenToolsSshTransfer.Text = Language.strMenuSSHFileTransfer;
-            _mMenToolsExternalApps.Text = Language.strMenuExternalTools;
-            _mMenToolsPortScan.Text = Language.strMenuPortScan;
             _mMenToolsComponentsCheck.Text = Language.strComponentsCheck;
             _mMenToolsOptions.Text = Language.strMenuOptions;
         }
@@ -124,15 +101,6 @@ namespace mRemoteNG.UI.Menu
             Windows.Show(WindowType.UltraVNCSC);
         }
 
-        private void mMenToolsExternalApps_Click(object sender, EventArgs e)
-        {
-            Windows.Show(WindowType.ExternalApps);
-        }
-
-        private void mMenToolsPortScan_Click(object sender, EventArgs e)
-        {
-            Windows.Show(WindowType.PortScan);
-        }
 
         private void mMenToolsComponentsCheck_Click(object sender, EventArgs e)
         {
